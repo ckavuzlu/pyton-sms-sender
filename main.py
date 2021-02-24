@@ -21,6 +21,7 @@ burak = Person("Burak", "bemlik1@gmail.com", 21, -1)
 can = Person("Can", "ckavuzlu@gmail.com", 5, -1)
 izzet = Person("İzzet", "fatmanesil@hotmail.com", 15, -1)
 mert = Person("Mert", "mert-erem@hotmail.com", 23, -1)
+selinay = Person("Selinay", "selinayatakay@gmail.com", "5" , -1)
 
 personArray = [berk, burak, can, izzet, mert]
 
