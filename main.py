@@ -21,19 +21,20 @@ burak = Person("Burak", "bemlik1@gmail.com", 21, -1)
 can = Person("Can", "ckavuzlu@gmail.com", 5, -1)
 izzet = Person("İzzet", "fatmanesil@hotmail.com", 15, -1)
 mert = Person("Mert", "mert-erem@hotmail.com", 23, -1)
-selinay = Person("Selinay", "selinayatakay@gmail.com", "5" , -1)
+selinay = Person("Selinay", "selinayatakay@gmail.com", 5, -1)
 
 personArray = [berk, burak, can, izzet, mert]
 
 sender_email = "ckavuzlu@gmail.com"
 subject = "Patyum Odeme Hatirlatmasi"
-encodedPassword = "ZmVuZXJiYWhjZTEyM3F3ZQ=="
+encodedPassword = "password"
 password = base64.b64decode(encodedPassword).decode("utf-8")
 
 
 def sendMail():
     for person in personArray:
-        if (person.dayOfMonth - 1 == datetime.datetime.now().date()) and person.lastEmail != datetime.datetime.now().date():
+        if (
+                person.dayOfMonth - 1 == datetime.datetime.now().date()) and person.lastEmail != datetime.datetime.now().date():
             body = """
                    Sevgili {name} ,
 
@@ -76,7 +77,7 @@ def sendMail():
             print(str(person.name) + ' Last Mail Tarihi : ' + str(person.lastEmail) + '\n')
 
 
-schedule.every().day.at("12:00").do(sendMail)
+schedule.every().day.at("14:00").do(sendMail)
 
 while True:
     schedule.run_pending()
